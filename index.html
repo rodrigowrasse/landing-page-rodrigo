@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigo Wrasse – Compra Segura de Imóveis da Caixa</title>
+    <meta name="description" content="Compre seu imóvel da Caixa com segurança e acompanhamento 100% gratuito. Sou Rodrigo Wrasse, corretor credenciado, e ajudo você em todo o processo.">
+    <meta name="keywords" content="comprar imóvel caixa, venda direta caixa, venda online caixa, rodrigo wrasse, corretor caixa, financiamento caixa, leilão caixa">
+    <meta name="author" content="Rodrigo Wrasse">
+
+    <meta property="og:title" content="Rodrigo Wrasse – Compra Segura de Imóveis da Caixa">
+    <meta property="og:description" content="Assessoria completa e gratuita para você comprar seu imóvel da Caixa com segurança e tranquilidade.">
+    <meta property="og:image" content="URL_DA_SUA_IMAGEM_AQUI.jpg"> 
+    <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ============== CONFIGURAÇÕES GLOBAIS E VARIÁVEIS ============== */
+        :root {
+            --azul-marinho: #003366;
+            --azul-escuro-secao: #1a202c;
+            --azul-claro: #EAF3FA;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --verde-whatsapp: #25D366;
+            --verde-whatsapp-hover: #1DA851;
+            --texto-escuro: #333333;
+            --texto-claro: #edf2f7;
+            --font-principal: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-principal); color: var(--texto-escuro); background-color: var(--branco); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--azul-marinho); }
+
+        /* ============== 1. SEÇÃO HERO ============== */
+        #hero {
+            background-color: var(--azul-claro);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text {
+            flex-basis: 55%;
+        }
+        .hero-image {
+            flex-basis: 40%;
+            text-align: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px; 
+            box-shadow: 0 10px 40px rgba(0, 51, 102, 0.2);
+        }
+        #hero h1 { font-size: 2.8rem; color: var(--azul-marinho); font-weight: 800; line-height: 1.2; margin-bottom: 20px;}
+        #hero h2 { font-size: 1.2rem; font-weight: 400; margin: 0 0 30px; line-height: 1.7; }
+        .btn-cta { background-color: var(--verde-whatsapp); color: var(--branco); padding: 18px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+        .btn-cta:hover { background-color: var(--verde-whatsapp-hover); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+        .btn-cta i { font-size: 1.5rem; }
+
+        /* ============== 2. SEÇÃO COMO FUNCIONA ============== */
+        #como-funciona { background-color: var(--branco); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 3px; background-color: var(--azul-claro); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
+        .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+        .timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -14px; background-color: var(--branco); border: 4px solid var(--azul-marinho); top: 25px; border-radius: 50%; z-index: 1; }
+        .timeline-item.right::after { left: -12px; }
+        .timeline-content { padding: 20px 30px; background-color: var(--azul-claro); position: relative; border-radius: 8px; }
+        .timeline-content h3 { font-size: 1.1rem; color: var(--azul-marinho); margin-bottom: 5px; }
+
+        /* ============== 3. SEÇÃO BENEFÍCIOS ============== */
+        #beneficios { background-color: var(--azul-claro); }
+        .beneficios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+        .beneficio-card { background-color: var(--branco); padding: 40px 20px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0, 51, 102, 0.08); transition: transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+        .beneficio-card:hover { transform: translateY(-10px); }
+        .beneficio-card i { font-size: 3rem; color: var(--azul-marinho); margin-bottom: 20px; }
+        .beneficio-card h3 { font-size: 1.3rem; color: var(--azul-marinho); margin-bottom: 10px; }
+        .cta-section-button { text-align: center; margin-top: 60px; } /* Estilo para o botão novo */
+
+        /* ============== NOVA SEÇÃO "QUEM SOU" ============== */
+        #quem-sou {
+            background-color: var(--azul-escuro-secao);
+            color: var(--texto-claro);
+        }
+        .quem-sou-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .quem-sou-image-wrapper {
+            flex-basis: 40%;
+            position: relative;
+        }
+        .quem-sou-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .creci-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--azul-marinho);
+            color: var(--branco);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .quem-sou-text {
+            flex-basis: 60%;
+        }
+        .tag {
+            display: inline-block;
+            background-color: var(--azul-marinho);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        #quem-sou h2 {
+            font-size: 2.5rem;
+            color: var(--branco);
+            margin-bottom: 20px;
+        }
+        #quem-sou p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .empresa-box {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* ============== 4. SEÇÃO DEPOIMENTOS ============== */
+        #depoimentos { background-color: var(--cinza-claro); }
+        .depoimentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .depoimento-card { background-color: var(--branco); padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05); border-left: 5px solid var(--azul-marinho); }
+        .depoimento-card p { font-style: italic; margin-bottom: 20px; }
+        .depoimento-card cite { font-weight: 700; color: var(--azul-marinho); }
+
+        /* ============== 5. SEÇÃO FALE COMIGO (CTA FINAL) ============== */
+        #fale-comigo { background-color: var(--azul-marinho); color: var(--branco); text-align: center; }
+        #fale-comigo h2 { color: var(--branco); font-size: 2.5rem; }
+        #fale-comigo p { max-width: 600px; margin: 20px auto 30px; font-size: 1.1rem; opacity: 0.9; }
+
+        /* ============== 6. RODAPÉ (NOVO MODELO) ============== */
+        footer {
+            background-color: var(--azul-escuro-secao);
+            color: var(--texto-claro);
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-size: 1.3rem;
+            color: var(--branco);
+            margin-bottom: 20px;
+        }
+        .footer-col p, .footer-col a {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--texto-claro);
+            text-decoration: none;
+        }
+        .footer-col a:hover { text-decoration: underline; }
+        .footer-col i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        .social-icons { margin-top: 20px; }
+        .social-icons a { color: var(--branco); font-size: 1.5rem; margin-right: 20px; transition: color 0.3s ease, transform 0.3s ease; }
+        .social-icons a:hover { transform: translateY(-3px); }
+        .social-icons .fa-instagram:hover { color: #E4405F; }
+        .social-icons .fa-facebook:hover { color: #1877F2; }
+        .social-icons .fa-linkedin:hover { color: #0A66C2; }
+        .social-icons .fa-tiktok:hover { color: #ff0050; }
+
+        /* ============== BOTÃO FLUTUANTE WHATSAPP ============== */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: var(--verde-whatsapp); color: var(--branco); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* ============== RESPONSIVIDADE ============== */
+        @media (max-width: 992px) {
+            .hero-grid, .quem-sou-grid { flex-direction: column; text-align: center; }
+            .hero-text { order: 2; }
+            .hero-image { order: 1; margin-bottom: 40px; }
+            .quem-sou-text { order: 2; }
+            .quem-sou-image-wrapper { order: 1; margin-bottom: 40px; width: 100%; max-width: 400px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            #hero h1, #quem-sou h2, .section-title h2 { font-size: 2rem; }
+            section { padding: 60px 0; }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item.left, .timeline-item.right { left: 0%; }
+            .timeline-item::after { left: 15px; }
+            .timeline-item.right::after { left: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="whatsapp-float" target="_blank" aria-label="Fale com Rodrigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    
+    <section id="hero">
+        <div class="container">
+            <div class="hero-grid fade-in">
+                <div class="hero-text">
+                    <h1>Quer comprar um imóvel da Caixa na Venda Direta ou Online? Fale comigo e vamos analisar juntos se o imóvel é viável!</h1>
+                    <h2>Receba um levantamento completo do imóvel, com orientação 100% gratuita e online — da análise à escritura.</h2>
+                    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-cta" target="_blank">
+                        <i class="fab fa-whatsapp"></i>Fale comigo no WhatsApp agora
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <img src="rodrigo-hero.jpg" alt="Foto de Rodrigo Wrasse, corretor credenciado Caixa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona">
+        <div class="container">
+            <div class="section-title fade-in"><h2>Como funciona o processo com o Rodrigo Wrasse</h2></div>
+            <div class="timeline">
+                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>1. Ponto de Partida</h3><p>Você quer comprar um imóvel da Caixa, mas não sabe por onde começar.</p></div></div>
+                <div class="timeline-item right fade-in"><div class="timeline-content"><h3>2. Primeiro Contato</h3><p>Conversamos pelo WhatsApp e agendamos uma videochamada individual.</p></div></div>
+                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>3. Orientação Gratuita</h3><p>Faço uma orientação personalizada, tirando todas as suas dúvidas.</p></div></div>
+                <div class="timeline-item right fade-in"><div class="timeline-content"><h3>4. Análise Técnica</h3><p>Analisamos juntos a viabilidade e documentação do imóvel desejado.</p></div></div>
+                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>5. Escolha da Modalidade</h3><p>Você escolhe o imóvel e decide comprar pela modalidade correta (Venda Direta ou Venda Online).</p></div></div>
+                <div class="timeline-item right fade-in"><div class="timeline-content"><h3>6. Credenciamento</h3><p>No sistema da Caixa, você me escolhe como seu corretor responsável.</p></div></div>
+                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>7. Financiamento (se necessário)</h3><p>Caso precise de financiamento, eu cuido de todo o processo para você.</p></div></div>
+                <div class="timeline-item right fade-in"><div class="timeline-content"><h3>8. Pagamento à Vista</h3><p>Se o pagamento for à vista, te auxilio com a escritura pública e o registro.</p></div></div>
+                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>9. Questões de Ocupação</h3><p>Se o imóvel estiver ocupado, te ajudo a contatar um advogado local de confiança.</p></div></div>
+                <div class="timeline-item right fade-in"><div class="timeline-content"><h3>10. Entrega das Chaves</h3><p>Você toma posse do seu imóvel com total tranquilidade e segurança.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios">
+        <div class="container">
+            <div class="section-title fade-in"><h2>Por que escolher o Rodrigo Wrasse?</h2></div>
+            <div class="beneficios-grid">
+                <div class="beneficio-card fade-in"><i class="fas fa-compass"></i><h3>Orientação Gratuita e Personalizada</h3><p>Atendimento direto comigo via videochamada, sem robôs e sem enrolação.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-balance-scale"></i><h3>Transparência Total</h3><p>Sem taxas, sem cursos, sem pegadinhas. Apenas orientação real e honesta.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-file-signature"></i><h3>Acompanhamento até o Registro</h3><p>Do início ao fim da compra, estarei ao seu lado em cada etapa do processo.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-certificate"></i><h3>Corretor Credenciado à Caixa</h3><p>Atuação oficial nas modalidades Venda Direta e Venda Online, com total segurança.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-hand-holding-dollar"></i><h3>Viabilidade de Recursos para Financiamento</h3><p>Analisamos sua capacidade de crédito e encontramos as melhores condições para o seu perfil.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-clipboard-check"></i><h3>Análise Completa do Imóvel Antes do Lance</h3><p>Verificamos a documentação e o estado do imóvel para garantir uma compra segura e sem surpresas.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-user-check"></i><h3>Análise de crédito completa</h3><p>Nossa central faz toda análise de crédito e aprovação do financiamento - 100% gratuito.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-globe-americas"></i><h3>Atuação Nacional</h3><p>Atendimento remoto para todo o Brasil, 100% online.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-gift"></i><h3>100% Gratuito</h3><p>Você não desembolsa um real pela assessoria!</p></div>
+            </div>
+            <div class="cta-section-button fade-in">
+                <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20saber%20mais%20sobre%20a%20assessoria" class="btn-cta" target="_blank">
+                    <i class="fab fa-whatsapp"></i>Quero uma Análise Gratuita
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="quem-sou">
+        <div class="container">
+            <div class="quem-sou-grid fade-in">
+                <div class="quem-sou-image-wrapper">
+                    <img src="rodrigo-about.jpg" alt="Rodrigo Wrasse em seu escritório">
+                    <div class="creci-badge">CRECI<br>F-32110</div>
+                </div>
+                <div class="quem-sou-text">
+                    <span class="tag">Corretor Credenciado</span>
+                    <h2>Quem é Rodrigo Wrasse</h2>
+                    <p>Corretor de imóveis CRECI F-32110, especialista em imóveis adjudicados, retomados e de leilão da Caixa Econômica Federal.</p>
+                    <p>Com anos de experiência no mercado imobiliário, ofereço um serviço diferenciado: não cobro por material de apoio ou assessoria — quando você arrematar um imóvel, basta me escolher como seu corretor no sistema da Caixa e pronto. Não desembolse um real pela orientação e acompanhamento. Após o arremate, cuido de toda a documentação e ainda pago a escritura pública.</p>
+                    <div class="empresa-box">
+                        <strong>Empresa Credenciada Caixa</strong><br>
+                        Front Administradora De Condomínios Ltda<br>
+                        CNPJ: 35.546.146/0001-11 | CRECI Jurídico: J-8053<br>
+                        Rua Santos Dumont, 3791, Sala 206 - Centro, Toledo/PR
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos">
+        <div class="container">
+            <div class="section-title fade-in"><h2>Quem comprou com o Rodrigo aprova!</h2></div>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card fade-in"><p>“Rodrigo me ajudou em cada etapa. Fiz a compra pela Caixa e tudo correu com tranquilidade. O atendimento foi nota 10, muito profissional e atencioso.”</p><cite>— Anderson L., Cascavel/PR</cite></div>
+                <div class="depoimento-card fade-in"><p>“Eu tinha muito receio de comprar imóvel da Caixa por ser ocupado. O Rodrigo desmistificou tudo e me deu a segurança que eu precisava. Recomendo!”</p><cite>— Mariana S., Foz do Iguaçu/PR</cite></div>
+                <div class="depoimento-card fade-in"><p>“Serviço gratuito e de altíssima qualidade. É raro encontrar profissionais assim. Fui muito bem assessorado do começo ao fim. Consegui meu apartamento.”</p><cite>— Carlos E., Toledo/PR</cite></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fale-comigo">
+        <div class="container fade-in">
+            <h2>Quer começar seu processo agora mesmo?</h2>
+            <p>Envie uma mensagem no WhatsApp e tire todas as suas dúvidas gratuitamente. Atendimento direto comigo, sem robôs e sem custo.</p>
+            <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-cta" target="_blank"><i class="fab fa-whatsapp"></i>Falar com Rodrigo no WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Rodrigo Wrasse</h4>
+                    <p>Corretor de imóveis credenciado Caixa, especialista em assessoria completa para compra de imóveis adjudicados e leilões.</p>
+                    <p><strong>CRECI Pessoa Física:</strong> F-32110<br><strong>CRECI Jurídico:</strong> J-8053</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p><i class="fab fa-whatsapp"></i><a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" target="_blank">(45) 99845-9643</a></p>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:rodrigowrasse@gmail.com">rodrigowrasse@gmail.com</a></p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/rodrigowrasse/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/rodrigo.wrasse" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/rodrigo-wrasse-94aa57245/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@rodrigowrasse71" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <p><i class="fas fa-building"></i>Front Administradora<br>De Condomínios Ltda</p>
+                    <p><strong>CNPJ:</strong> 35.546.146/0001-11</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Rua Santos Dumont, 3791<br>Sala 206 - Centro, Toledo/PR</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rodrigo Wrasse. Todos os direitos reservados.</p>
+                <p>CRECI F-32110 | CRECI J-8053 | Caixa Econômica Federal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
