@@ -54,9 +54,10 @@
         }
         .hero-grid {
             display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem a linha */
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 20px 40px; /* Espaçamento vertical e horizontal */
         }
         .hero-text {
             flex-basis: 55%;
@@ -72,7 +73,14 @@
             box-shadow: 0 10px 40px rgba(0, 51, 102, 0.2);
         }
         #hero h1 { font-size: 2.8rem; color: var(--azul-marinho); font-weight: 800; line-height: 1.2; margin-bottom: 20px;}
-        #hero h2 { font-size: 1.2rem; font-weight: 400; margin: 0 0 30px; line-height: 1.7; }
+        #hero h2 { font-size: 1.2rem; font-weight: 400; line-height: 1.7; }
+        
+        /* O botão agora é um item separado no grid */
+        .hero-cta-wrapper {
+            flex-basis: 55%; /* Ocupa a mesma largura do texto no desktop */
+            margin-top: 10px;
+        }
+
         .btn-cta { background-color: var(--verde-whatsapp); color: var(--branco); padding: 18px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
         .btn-cta:hover { background-color: var(--verde-whatsapp-hover); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
         .btn-cta i { font-size: 1.5rem; }
@@ -166,7 +174,7 @@
         #fale-comigo h2 { color: var(--branco); font-size: 2.5rem; }
         #fale-comigo p { max-width: 600px; margin: 20px auto 30px; font-size: 1.1rem; opacity: 0.9; }
 
-        /* ============== 6. RODAPÉ (NOVO MODELO) ============== */
+        /* ============== 6. RODAPÉ ============== */
         footer {
             background-color: var(--azul-escuro-secao);
             color: var(--texto-claro);
@@ -216,30 +224,30 @@
 
         /* ============== RESPONSIVIDADE ============== */
         @media (max-width: 992px) {
-            .hero-grid, .quem-sou-grid {
+            .hero-grid {
                 flex-direction: column;
                 text-align: center;
             }
-            /* AJUSTE PARA O MOBILE AQUI */
             .hero-text {
-                order: 1; /* Texto vem primeiro */
+                order: 1; /* 1. Texto */
+                flex-basis: 100%;
             }
             .hero-image {
-                order: 2; /* Imagem vem depois */
-                margin-top: 40px; /* Espaço entre texto e imagem */
+                order: 2; /* 2. Imagem */
+                flex-basis: 100%;
+                margin: 40px 0;
             }
-            .quem-sou-text {
-                order: 1; /* Texto vem primeiro */
+            .hero-cta-wrapper {
+                order: 3; /* 3. Botão */
+                flex-basis: 100%;
             }
-            .quem-sou-image-wrapper {
-                order: 2; /* Imagem vem depois */
-                margin-top: 40px; /* Espaço entre texto e imagem */
-                width: 100%;
-                max-width: 400px;
+            .quem-sou-grid {
+                flex-direction: column;
+                text-align: center;
             }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .quem-sou-text { order: 1; }
+            .quem-sou-image-wrapper { order: 2; margin-top: 40px; width: 100%; max-width: 400px; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             #hero h1, #quem-sou h2, .section-title h2 { font-size: 2rem; }
@@ -259,16 +267,22 @@
     <section id="hero">
         <div class="container">
             <div class="hero-grid fade-in">
+                
                 <div class="hero-text">
                     <h1>Quer comprar um imóvel da Caixa na Venda Direta ou Online? Fale comigo e vamos analisar juntos se o imóvel é viável!</h1>
                     <h2>Receba um levantamento completo do imóvel, com orientação 100% gratuita e online — da análise à escritura.</h2>
+                </div>
+
+                <div class="hero-image">
+                    <img src="rodrigo-hero.jpg" alt="Foto de Rodrigo Wrasse, corretor credenciado Caixa">
+                </div>
+
+                <div class="hero-cta-wrapper">
                     <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-cta" target="_blank">
                         <i class="fab fa-whatsapp"></i>Fale comigo no WhatsApp agora
                     </a>
                 </div>
-                <div class="hero-image">
-                    <img src="rodrigo-hero.jpg" alt="Foto de Rodrigo Wrasse, corretor credenciado Caixa">
-                </div>
+
             </div>
         </div>
     </section>
