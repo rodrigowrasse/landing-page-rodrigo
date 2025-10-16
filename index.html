@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -96,7 +96,7 @@
         .beneficio-card:hover { transform: translateY(-10px); }
         .beneficio-card i { font-size: 3rem; color: var(--azul-marinho); margin-bottom: 20px; }
         .beneficio-card h3 { font-size: 1.3rem; color: var(--azul-marinho); margin-bottom: 10px; }
-        .cta-section-button { text-align: center; margin-top: 60px; } /* Estilo para o botão novo */
+        .cta-section-button { text-align: center; margin-top: 60px; }
 
         /* ============== NOVA SEÇÃO "QUEM SOU" ============== */
         #quem-sou {
@@ -216,12 +216,30 @@
 
         /* ============== RESPONSIVIDADE ============== */
         @media (max-width: 992px) {
-            .hero-grid, .quem-sou-grid { flex-direction: column; text-align: center; }
-            .hero-text { order: 2; }
-            .hero-image { order: 1; margin-bottom: 40px; }
-            .quem-sou-text { order: 2; }
-            .quem-sou-image-wrapper { order: 1; margin-bottom: 40px; width: 100%; max-width: 400px; }
-            .footer-grid { grid-template-columns: 1fr; }
+            .hero-grid, .quem-sou-grid {
+                flex-direction: column;
+                text-align: center;
+            }
+            /* AJUSTE PARA O MOBILE AQUI */
+            .hero-text {
+                order: 1; /* Texto vem primeiro */
+            }
+            .hero-image {
+                order: 2; /* Imagem vem depois */
+                margin-top: 40px; /* Espaço entre texto e imagem */
+            }
+            .quem-sou-text {
+                order: 1; /* Texto vem primeiro */
+            }
+            .quem-sou-image-wrapper {
+                order: 2; /* Imagem vem depois */
+                margin-top: 40px; /* Espaço entre texto e imagem */
+                width: 100%;
+                max-width: 400px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
         @media (max-width: 768px) {
             #hero h1, #quem-sou h2, .section-title h2 { font-size: 2rem; }
