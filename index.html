@@ -8,6 +8,12 @@
     <meta name="keywords" content="comprar imóvel caixa, venda direta caixa, venda online caixa, rodrigo wrasse, corretor caixa, financiamento caixa, leilão caixa">
     <meta name="author" content="Rodrigo Wrasse">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+
     <meta property="og:title" content="Rodrigo Wrasse – Compra Segura de Imóveis da Caixa">
     <meta property="og:description" content="Assessoria completa e gratuita para você comprar seu imóvel da Caixa com segurança e tranquilidade.">
     <meta property="og:image" content="URL_DA_SUA_IMAGEM_AQUI.jpg"> 
@@ -54,37 +60,37 @@
         }
         .hero-grid {
             display: flex;
-            flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 20px 40px; /* Espaçamento vertical e horizontal */
+            gap: 20px 40px;
         }
-        .hero-text {
-            flex-basis: 55%;
-        }
+        .hero-text { flex-basis: 55%; }
         .hero-image {
             flex-basis: 40%;
             text-align: center;
+            position: relative;
         }
-        .hero-image img {
+        .hero-image img.foto-principal {
             width: 100%;
             max-width: 380px;
-            border-radius: 20px; 
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 51, 102, 0.2);
+        }
+        .hero-logo-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
         }
         #hero h1 { font-size: 2.8rem; color: var(--azul-marinho); font-weight: 800; line-height: 1.2; margin-bottom: 20px;}
         #hero h2 { font-size: 1.2rem; font-weight: 400; line-height: 1.7; }
-        
-        /* O botão agora é um item separado no grid */
-        .hero-cta-wrapper {
-            flex-basis: 55%; /* Ocupa a mesma largura do texto no desktop */
-            margin-top: 10px;
-        }
-
+        .hero-cta-wrapper { flex-basis: 55%; margin-top: 30px; }
         .btn-cta { background-color: var(--verde-whatsapp); color: var(--branco); padding: 18px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
         .btn-cta:hover { background-color: var(--verde-whatsapp-hover); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
         .btn-cta i { font-size: 1.5rem; }
-
+        
         /* ============== 2. SEÇÃO COMO FUNCIONA ============== */
         #como-funciona { background-color: var(--branco); }
         .timeline { position: relative; max-width: 800px; margin: 0 auto; }
@@ -106,110 +112,41 @@
         .beneficio-card h3 { font-size: 1.3rem; color: var(--azul-marinho); margin-bottom: 10px; }
         .cta-section-button { text-align: center; margin-top: 60px; }
 
-        /* ============== NOVA SEÇÃO "QUEM SOU" ============== */
-        #quem-sou {
-            background-color: var(--azul-escuro-secao);
-            color: var(--texto-claro);
-        }
-        .quem-sou-grid {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-        .quem-sou-image-wrapper {
-            flex-basis: 40%;
-            position: relative;
-        }
-        .quem-sou-image-wrapper img {
-            width: 100%;
-            border-radius: 20px;
-        }
-        .creci-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: var(--azul-marinho);
-            color: var(--branco);
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-weight: 700;
-            text-align: center;
-        }
-        .quem-sou-text {
-            flex-basis: 60%;
-        }
-        .tag {
-            display: inline-block;
-            background-color: var(--azul-marinho);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        #quem-sou h2 {
-            font-size: 2.5rem;
-            color: var(--branco);
-            margin-bottom: 20px;
-        }
-        #quem-sou p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        .empresa-box {
-            background-color: rgba(0,0,0,0.2);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-        }
+        /* ============== 4. SEÇÃO "QUEM SOU" ============== */
+        #quem-sou { background-color: var(--azul-escuro-secao); color: var(--texto-claro); }
+        .quem-sou-grid { display: flex; align-items: center; gap: 60px; }
+        .quem-sou-image-wrapper { flex-basis: 40%; position: relative; }
+        .quem-sou-image-wrapper img { width: 100%; border-radius: 20px; }
+        .creci-badge { position: absolute; top: 20px; right: 20px; background-color: var(--azul-marinho); color: var(--branco); padding: 10px 15px; border-radius: 10px; font-weight: 700; text-align: center; }
+        .quem-sou-text { flex-basis: 60%; }
+        .tag { display: inline-block; background-color: var(--azul-marinho); padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-bottom: 15px; }
+        #quem-sou h2 { font-size: 2.5rem; color: var(--branco); margin-bottom: 20px; }
+        #quem-sou p { line-height: 1.8; margin-bottom: 20px; }
+        .empresa-box { background-color: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; font-size: 0.9rem; }
+        .empresa-box-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .empresa-box-header img { height: 45px; }
+        .empresa-box-header strong { font-size: 1.1rem; }
 
-        /* ============== 4. SEÇÃO DEPOIMENTOS ============== */
+        /* ============== 5. SEÇÃO DEPOIMENTOS ============== */
         #depoimentos { background-color: var(--cinza-claro); }
         .depoimentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .depoimento-card { background-color: var(--branco); padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05); border-left: 5px solid var(--azul-marinho); }
         .depoimento-card p { font-style: italic; margin-bottom: 20px; }
         .depoimento-card cite { font-weight: 700; color: var(--azul-marinho); }
 
-        /* ============== 5. SEÇÃO FALE COMIGO (CTA FINAL) ============== */
+        /* ============== 6. SEÇÃO FALE COMIGO (CTA FINAL) ============== */
         #fale-comigo { background-color: var(--azul-marinho); color: var(--branco); text-align: center; }
         #fale-comigo h2 { color: var(--branco); font-size: 2.5rem; }
         #fale-comigo p { max-width: 600px; margin: 20px auto 30px; font-size: 1.1rem; opacity: 0.9; }
 
-        /* ============== 6. RODAPÉ ============== */
-        footer {
-            background-color: var(--azul-escuro-secao);
-            color: var(--texto-claro);
-            padding: 60px 0 30px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-col h4 {
-            font-size: 1.3rem;
-            color: var(--branco);
-            margin-bottom: 20px;
-        }
-        .footer-col p, .footer-col a {
-            font-size: 0.9rem;
-            line-height: 1.8;
-            color: var(--texto-claro);
-            text-decoration: none;
-        }
+        /* ============== 7. RODAPÉ ============== */
+        footer { background-color: var(--azul-escuro-secao); color: var(--texto-claro); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-size: 1.3rem; color: var(--branco); margin-bottom: 20px; }
+        .footer-col p, .footer-col a { font-size: 0.9rem; line-height: 1.8; color: var(--texto-claro); text-decoration: none; }
         .footer-col a:hover { text-decoration: underline; }
-        .footer-col i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
+        .footer-col i { margin-right: 10px; width: 20px; text-align: center; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.8rem; opacity: 0.7; }
         .social-icons { margin-top: 20px; }
         .social-icons a { color: var(--branco); font-size: 1.5rem; margin-right: 20px; transition: color 0.3s ease, transform 0.3s ease; }
         .social-icons a:hover { transform: translateY(-3px); }
@@ -217,6 +154,7 @@
         .social-icons .fa-facebook:hover { color: #1877F2; }
         .social-icons .fa-linkedin:hover { color: #0A66C2; }
         .social-icons .fa-tiktok:hover { color: #ff0050; }
+        .footer-logo { height: 60px; margin-bottom: 20px; opacity: 0.8; }
 
         /* ============== BOTÃO FLUTUANTE WHATSAPP ============== */
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: var(--verde-whatsapp); color: var(--branco); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s ease; }
@@ -224,27 +162,11 @@
 
         /* ============== RESPONSIVIDADE ============== */
         @media (max-width: 992px) {
-            .hero-grid {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-text {
-                order: 1; /* 1. Texto */
-                flex-basis: 100%;
-            }
-            .hero-image {
-                order: 2; /* 2. Imagem */
-                flex-basis: 100%;
-                margin: 40px 0;
-            }
-            .hero-cta-wrapper {
-                order: 3; /* 3. Botão */
-                flex-basis: 100%;
-            }
-            .quem-sou-grid {
-                flex-direction: column;
-                text-align: center;
-            }
+            .hero-grid { flex-direction: column; text-align: center; }
+            .hero-text { order: 1; flex-basis: 100%; }
+            .hero-image { order: 2; flex-basis: 100%; margin: 40px 0; }
+            .hero-cta-wrapper { order: 3; flex-basis: 100%; }
+            .quem-sou-grid { flex-direction: column; text-align: center; }
             .quem-sou-text { order: 1; }
             .quem-sou-image-wrapper { order: 2; margin-top: 40px; width: 100%; max-width: 400px; }
             .footer-grid { grid-template-columns: 1fr; }
@@ -274,7 +196,8 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="rodrigo-hero.jpg" alt="Foto de Rodrigo Wrasse, corretor credenciado Caixa">
+                    <img src="rodrigo-hero.jpg" alt="Foto de Rodrigo Wrasse, corretor credenciado Caixa" class="foto-principal">
+                    <img src="logo-caixa.png" alt="Logo Caixa Econômica Federal" class="hero-logo-overlay">
                 </div>
 
                 <div class="hero-cta-wrapper">
@@ -340,7 +263,10 @@
                     <p>Corretor de imóveis CRECI F-32110, especialista em imóveis adjudicados, retomados e de leilão da Caixa Econômica Federal.</p>
                     <p>Com anos de experiência no mercado imobiliário, ofereço um serviço diferenciado: não cobro por material de apoio ou assessoria — quando você arrematar um imóvel, basta me escolher como seu corretor no sistema da Caixa e pronto. Não desembolse um real pela orientação e acompanhamento. Após o arremate, cuido de toda a documentação e ainda pago a escritura pública.</p>
                     <div class="empresa-box">
-                        <strong>Empresa Credenciada Caixa</strong><br>
+                        <div class="empresa-box-header">
+                            <img src="logo-caixa.png" alt="Logo Caixa">
+                            <strong>Empresa Credenciada Caixa</strong>
+                        </div>
                         Front Administradora De Condomínios Ltda<br>
                         CNPJ: 35.546.146/0001-11 | CRECI Jurídico: J-8053<br>
                         Rua Santos Dumont, 3791, Sala 206 - Centro, Toledo/PR
@@ -396,6 +322,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <img src="logo-caixa.png" alt="Parceiro Caixa" class="footer-logo">
                 <p>&copy; 2024 Rodrigo Wrasse. Todos os direitos reservados.</p>
                 <p>CRECI F-32110 | CRECI J-8053 | Caixa Econômica Federal</p>
             </div>
