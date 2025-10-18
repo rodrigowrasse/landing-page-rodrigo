@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rodrigo Wrasse – Compra Segura de Imóveis da Caixa</title>
-    <meta name="description" content="Compre seu imóvel da Caixa com segurança e acompanhamento 100% gratuito. Sou Rodrigo Wrasse, corretor credenciado, e ajudo você em todo o processo.">
-    <meta name="keywords" content="comprar imóvel caixa, venda direta caixa, venda online caixa, rodrigo wrasse, corretor caixa, financiamento caixa, leilão caixa">
+    <title>Rodrigo Wrasse – Venda Direta de Imóveis da Caixa no Paraná</title>
+    <meta name="description" content="Assessoria para compra de imóveis da Caixa na modalidade Venda Direta em todo o Paraná. Sou Rodrigo Wrasse, corretor credenciado, e ajudo você no processo.">
+    <meta name="keywords" content="comprar imóvel caixa, venda direta caixa, rodrigo wrasse, corretor caixa, financiamento caixa, imóveis paraná, venda direta paraná">
     <meta name="author" content="Rodrigo Wrasse">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -14,8 +14,8 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <meta property="og:title" content="Rodrigo Wrasse – Compra Segura de Imóveis da Caixa">
-    <meta property="og:description" content="Assessoria completa e gratuita para você comprar seu imóvel da Caixa com segurança e tranquilidade.">
+    <meta property="og:title" content="Rodrigo Wrasse – Venda Direta de Imóveis da Caixa no Paraná">
+    <meta property="og:description" content="Assessoria completa e gratuita para você comprar seu imóvel da Caixa na Venda Direta, com foco no Paraná.">
     <meta property="og:image" content="URL_DA_SUA_IMAGEM_AQUI.jpg"> 
     <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
     <meta property="og:type" content="website">
@@ -38,6 +38,8 @@
             --texto-escuro: #333333;
             --texto-claro: #edf2f7;
             --font-principal: 'Poppins', sans-serif;
+            --laranja-caixa: #F26122; /* Cor laranja da Caixa */
+            --laranja-caixa-hover: #D4541D;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,10 +53,89 @@
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 2.5rem; color: var(--azul-marinho); }
 
+        /* ============== NOVO CABEÇALHO ============== */
+        header {
+            background-color: var(--laranja-caixa);
+            color: var(--branco);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--branco);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .navbar .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 0;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .navbar .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: var(--branco);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+        }
+        .navbar .nav-links a:hover::after,
+        .navbar .nav-links a.active::after {
+            width: 100%;
+        }
+        .navbar .nav-links a:hover {
+            color: var(--cinza-claro); /* Levemente mais claro no hover */
+        }
+        .navbar .btn-header-cta {
+            background-color: var(--verde-whatsapp);
+            color: var(--branco);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .btn-header-cta:hover {
+            background-color: var(--verde-whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .navbar .btn-header-cta i {
+            font-size: 1.2rem;
+        }
+
         /* ============== 1. SEÇÃO HERO ============== */
         #hero {
             background-color: var(--azul-claro);
-            min-height: 90vh;
+            min-height: 90vh; /* Ajustado para considerar o cabeçalho */
             display: flex;
             align-items: center;
         }
@@ -64,11 +145,11 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px 40px;
+            padding-top: 20px; /* Espaçamento para o conteúdo após o cabeçalho */
         }
         .hero-text { flex-basis: 55%; }
         .hero-image {
             flex-basis: 40%;
-            text-align: center;
             position: relative;
         }
         .hero-image img.foto-principal {
@@ -76,13 +157,8 @@
             max-width: 380px;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 51, 102, 0.2);
-        }
-        .hero-logo-overlay {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 120px;
-            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
+            display: block;
+            margin: 0 auto;
         }
         #hero h1 { font-size: 2.8rem; color: var(--azul-marinho); font-weight: 800; line-height: 1.2; margin-bottom: 20px;}
         #hero h2 { font-size: 1.2rem; font-weight: 400; line-height: 1.7; }
@@ -164,12 +240,56 @@
         @media (max-width: 992px) {
             .hero-grid { flex-direction: column; text-align: center; }
             .hero-text { order: 1; flex-basis: 100%; }
-            .hero-image { order: 2; flex-basis: 100%; margin: 40px 0; }
+            .hero-image { 
+                order: 2; 
+                flex-basis: 100%; 
+                margin: 40px 0;
+                align-self: center;
+            }
             .hero-cta-wrapper { order: 3; flex-basis: 100%; }
             .quem-sou-grid { flex-direction: column; text-align: center; }
             .quem-sou-text { order: 1; }
             .quem-sou-image-wrapper { order: 2; margin-top: 40px; width: 100%; max-width: 400px; }
             .footer-grid { grid-template-columns: 1fr; }
+
+            /* Mobile Header */
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .navbar .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                text-align: left;
+                display: none; /* Escondido por padrão, será ativado com JS para um menu hambúrguer */
+            }
+            .navbar .nav-links.show {
+                display: flex;
+            }
+            .navbar .nav-links a {
+                padding: 10px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+            .navbar .btn-header-cta {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .menu-toggle {
+                display: block; /* Botão de menu hamburguer visível no mobile */
+                font-size: 1.8rem;
+                cursor: pointer;
+                color: var(--branco);
+            }
+            .navbar-top {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+            }
         }
         @media (max-width: 768px) {
             #hero h1, #quem-sou h2, .section-title h2 { font-size: 2rem; }
@@ -180,9 +300,35 @@
             .timeline-item::after { left: 15px; }
             .timeline-item.right::after { left: 15px; }
         }
+
+        /* Esconder menu toggle em desktop */
+        .menu-toggle {
+            display: none;
+        }
     </style>
 </head>
 <body>
+
+    <header>
+        <div class="navbar">
+            <div class="navbar-top">
+                <a href="#hero" class="logo">RODRIGO WRASSE</a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#como-funciona">COMO FUNCIONA</a></li>
+                <li><a href="#beneficios">BENEFÍCIOS</a></li>
+                <li><a href="#quem-sou">QUEM SOU</a></li>
+                <li><a href="#fale-comigo">CONTATO</a></li>
+            </ul>
+            <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-header-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i>FALE AGORA
+            </a>
+        </div>
+    </header>
 
     <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="whatsapp-float" target="_blank" aria-label="Fale com Rodrigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
     
@@ -191,13 +337,12 @@
             <div class="hero-grid fade-in">
                 
                 <div class="hero-text">
-                    <h1>Quer comprar um imóvel da Caixa na Venda Direta ou Online? Fale comigo e vamos analisar juntos se o imóvel é viável!</h1>
+                    <h1>Quer comprar um imóvel da Caixa na Venda Direta no Paraná? Fale comigo e vamos analisar juntos a viabilidade!</h1>
                     <h2>Receba um levantamento completo do imóvel, com orientação 100% gratuita e online — da análise à escritura.</h2>
                 </div>
 
                 <div class="hero-image">
                     <img src="rodrigo-hero.jpg" alt="Foto de Rodrigo Wrasse, corretor credenciado Caixa" class="foto-principal">
-                    <img src="logo-caixa.png" alt="Logo Caixa Econômica Federal" class="hero-logo-overlay">
                 </div>
 
                 <div class="hero-cta-wrapper">
@@ -218,7 +363,7 @@
                 <div class="timeline-item right fade-in"><div class="timeline-content"><h3>2. Primeiro Contato</h3><p>Conversamos pelo WhatsApp e agendamos uma videochamada individual.</p></div></div>
                 <div class="timeline-item left fade-in"><div class="timeline-content"><h3>3. Orientação Gratuita</h3><p>Faço uma orientação personalizada, tirando todas as suas dúvidas.</p></div></div>
                 <div class="timeline-item right fade-in"><div class="timeline-content"><h3>4. Análise Técnica</h3><p>Analisamos juntos a viabilidade e documentação do imóvel desejado.</p></div></div>
-                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>5. Escolha da Modalidade</h3><p>Você escolhe o imóvel e decide comprar pela modalidade correta (Venda Direta ou Venda Online).</p></div></div>
+                <div class="timeline-item left fade-in"><div class="timeline-content"><h3>5. Proposta de Compra</h3><p>Após a análise, você decide pelo imóvel e eu te auxilio com a apresentação da proposta de compra no sistema da Caixa.</p></div></div>
                 <div class="timeline-item right fade-in"><div class="timeline-content"><h3>6. Credenciamento</h3><p>No sistema da Caixa, você me escolhe como seu corretor responsável.</p></div></div>
                 <div class="timeline-item left fade-in"><div class="timeline-content"><h3>7. Financiamento (se necessário)</h3><p>Caso precise de financiamento, eu cuido de todo o processo para você.</p></div></div>
                 <div class="timeline-item right fade-in"><div class="timeline-content"><h3>8. Pagamento à Vista</h3><p>Se o pagamento for à vista, te auxilio com a escritura pública e o registro.</p></div></div>
@@ -235,11 +380,11 @@
                 <div class="beneficio-card fade-in"><i class="fas fa-compass"></i><h3>Orientação Gratuita e Personalizada</h3><p>Atendimento direto comigo via videochamada, sem robôs e sem enrolação.</p></div>
                 <div class="beneficio-card fade-in"><i class="fas fa-balance-scale"></i><h3>Transparência Total</h3><p>Sem taxas, sem cursos, sem pegadinhas. Apenas orientação real e honesta.</p></div>
                 <div class="beneficio-card fade-in"><i class="fas fa-file-signature"></i><h3>Acompanhamento até o Registro</h3><p>Do início ao fim da compra, estarei ao seu lado em cada etapa do processo.</p></div>
-                <div class="beneficio-card fade-in"><i class="fas fa-certificate"></i><h3>Corretor Credenciado à Caixa</h3><p>Atuação oficial nas modalidades Venda Direta e Venda Online, com total segurança.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-certificate"></i><h3>Corretor Credenciado à Caixa</h3><p>Atuação oficial na modalidade Venda Direta, garantindo total segurança no processo.</p></div>
                 <div class="beneficio-card fade-in"><i class="fas fa-hand-holding-dollar"></i><h3>Viabilidade de Recursos para Financiamento</h3><p>Analisamos sua capacidade de crédito e encontramos as melhores condições para o seu perfil.</p></div>
-                <div class="beneficio-card fade-in"><i class="fas fa-clipboard-check"></i><h3>Análise Completa do Imóvel Antes do Lance</h3><p>Verificamos a documentação e o estado do imóvel para garantir uma compra segura e sem surpresas.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-clipboard-check"></i><h3>Análise Completa do Imóvel Antes da Proposta</h3><p>Verificamos a documentação e o estado do imóvel para garantir uma compra segura e sem surpresas.</p></div>
                 <div class="beneficio-card fade-in"><i class="fas fa-user-check"></i><h3>Análise de crédito completa</h3><p>Nossa central faz toda análise de crédito e aprovação do financiamento - 100% gratuito.</p></div>
-                <div class="beneficio-card fade-in"><i class="fas fa-globe-americas"></i><h3>Atuação Nacional</h3><p>Atendimento remoto para todo o Brasil, 100% online.</p></div>
+                <div class="beneficio-card fade-in"><i class="fas fa-globe-americas"></i><h3>Especialista no Paraná</h3><p>Atendimento focado e especializado para todos os imóveis da Caixa em Venda Direta no estado do Paraná.</p></div>
                 <div class="beneficio-card fade-in"><i class="fas fa-gift"></i><h3>100% Gratuito</h3><p>Você não desembolsa um real pela assessoria!</p></div>
             </div>
             <div class="cta-section-button fade-in">
@@ -260,7 +405,7 @@
                 <div class="quem-sou-text">
                     <span class="tag">Corretor Credenciado</span>
                     <h2>Quem é Rodrigo Wrasse</h2>
-                    <p>Corretor de imóveis CRECI F-32110, especialista em imóveis adjudicados, retomados e de leilão da Caixa Econômica Federal.</p>
+                    <p>Corretor de imóveis CRECI F-32110, especialista na intermediação de Venda Direta de imóveis da Caixa Econômica Federal no estado do Paraná.</p>
                     <p>Com anos de experiência no mercado imobiliário, ofereço um serviço diferenciado: não cobro por material de apoio ou assessoria — quando você arrematar um imóvel, basta me escolher como seu corretor no sistema da Caixa e pronto. Não desembolse um real pela orientação e acompanhamento. Após o arremate, cuido de toda a documentação e ainda pago a escritura pública.</p>
                     <div class="empresa-box">
                         <div class="empresa-box-header">
@@ -300,7 +445,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Rodrigo Wrasse</h4>
-                    <p>Corretor de imóveis credenciado Caixa, especialista em assessoria completa para compra de imóveis adjudicados e leilões.</p>
+                    <p>Corretor de imóveis credenciado Caixa, especialista em assessoria completa para compra de imóveis na Venda Direta no Paraná.</p>
                     <p><strong>CRECI Pessoa Física:</strong> F-32110<br><strong>CRECI Jurídico:</strong> J-8053</p>
                 </div>
                 <div class="footer-col">
@@ -344,6 +489,64 @@
             const elementsToAnimate = document.querySelectorAll('.fade-in');
             elementsToAnimate.forEach(el => {
                 observer.observe(el);
+            });
+
+            // SMOOTH SCROLL PARA OS LINKS DO CABEÇALHO
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    // Ajusta o scroll para compensar o cabeçalho fixo
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset - 20; /* 20px de margem extra */
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+
+                    // Fecha o menu mobile se estiver aberto
+                    const navLinks = document.querySelector('.nav-links');
+                    if (navLinks.classList.contains('show')) {
+                        navLinks.classList.remove('show');
+                    }
+                });
+            });
+
+            // FUNCIONALIDADE DO MENU HAMBÚRGUER (MOBILE)
+            const mobileMenuButton = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuButton && navLinks) {
+                mobileMenuButton.addEventListener('click', function() {
+                    navLinks.classList.toggle('show');
+                });
+            }
+
+            // Destacar o link ativo no menu (opcional, pode ser expandido para IntersectionObserver)
+            // Aqui é uma versão bem simplificada, apenas para demonstração
+            const sections = document.querySelectorAll('section');
+            const navLinksList = document.querySelectorAll('.nav-links a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight - 30; // Ajuste o offset
+                    if (pageYOffset >= sectionTop) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+
+                navLinksList.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href') === current) {
+                        a.classList.add('active');
+                    }
+                });
             });
         });
     </script>
