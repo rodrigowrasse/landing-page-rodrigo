@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rodrigo Wrasse – Venda Direta de Imóveis da Caixa no Paraná</title>
     <meta name="description" content="Assessoria para compra de imóveis da Caixa na modalidade Venda Direta em todo o Paraná. Sou Rodrigo Wrasse, corretor credenciado, e ajudo você no processo.">
-    <meta name="keywords" content="comprar imóvel caixa, venda direta caixa, rodrigo wrasse, corretor caixa, financiamento caixa, imóveis paraná, venda direta paraná">
+    <meta name="keywords" content="comprar imóvel caixa, venda direta caixa, rodrigo wrasse, corretor caixa, financiamento caixa, imóveis paraná, venda direta paraná, investir imovel caixa, investimento imobiliario">
     <meta name="author" content="Rodrigo Wrasse">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -14,8 +14,8 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <meta property="og:title" content="Rodrigo Wrasse – Venda Direta de Imóveis da Caixa no Paraná">
-    <meta property="og:description" content="Assessoria completa e gratuita para você comprar seu imóvel da Caixa na Venda Direta, com foco no Paraná.">
+    <meta property="og:title" content="Rodrigo Wrasse – Imóveis da Caixa para Investimento no Paraná">
+    <meta property="og:description" content="Assessoria completa e gratuita para investidores em imóveis da Caixa na Venda Direta, com foco no Paraná.">
     <meta property="og:image" content="URL_DA_SUA_IMAGEM_AQUI.jpg"> 
     <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
     <meta property="og:type" content="website">
@@ -174,12 +174,43 @@
         .quem-sou-image-wrapper { flex-basis: 40%; position: relative; }
         .quem-sou-image-wrapper img { width: 100%; border-radius: 20px; }
         .creci-badge { position: absolute; top: 20px; right: 20px; background-color: var(--azul-marinho); color: var(--branco); padding: 10px 15px; border-radius: 10px; font-weight: 700; text-align: center; }
-        .quem-sou-text { flex-basis: 60%; }
-        .tag { display: inline-block; background-color: var(--azul-marinho); padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-bottom: 15px; }
-        #quem-sou h2 { font-size: 2.5rem; color: var(--branco); margin-bottom: 20px; }
-        #quem-sou p { line-height: 1.8; margin-bottom: 20px; }
-        .empresa-box { background-color: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; font-size: 0.9rem; }
-        .empresa-box-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .quem-sou-text { 
+            flex-basis: 60%; 
+            /* Remove text-align: center para justificar */
+            max-width: 600px; /* Limita a largura do texto para não ficar muito extenso */
+            margin: 0 auto; /* Centraliza o bloco de texto (se for um bloco único) */
+            text-align: justify; /* Adiciona justificação ao texto */
+        }
+        .quem-sou-text .tag { 
+            display: block; /* Garante que o span ocupe toda a largura para centralizar */
+            margin: 0 auto 15px; /* Centraliza o tag */
+            text-align: center; /* Centraliza o texto do tag */
+            width: fit-content; /* Ajusta a largura do tag ao seu conteúdo */
+        }
+        #quem-sou h2 { 
+            font-size: 2.5rem; 
+            color: var(--branco); 
+            margin-bottom: 20px; 
+            text-align: center; /* Mantém o título h2 centralizado */
+        }
+        #quem-sou p { line-height: 1.8; margin-bottom: 20px; text-align: justify; /* Garante justificação para parágrafos */ }
+        .empresa-box { 
+            background-color: rgba(0,0,0,0.2); 
+            padding: 20px; 
+            border-radius: 10px; 
+            font-size: 0.9rem; 
+            text-align: justify; /* Justifica o texto dentro da caixa */
+            max-width: 400px; /* Limita a largura da caixa */
+            margin: 20px auto 0; /* Centraliza a caixa de empresa e adiciona margem superior */
+        }
+        .empresa-box-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            margin-bottom: 15px; 
+            justify-content: center; /* Centraliza a logo e o texto no header da caixa */
+            text-align: left; /* Garante que o texto forte não fique justificado se for centralizado */
+        }
         .empresa-box-header img { height: 45px; }
         .empresa-box-header strong { font-size: 1.1rem; }
 
@@ -205,7 +236,6 @@
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.8rem; opacity: 0.7; }
         .social-icons { margin-top: 20px; }
         .social-icons a { color: var(--branco); font-size: 1.5rem; margin-right: 20px; transition: color 0.3s ease, transform 0.3s ease; }
-        .social-icons a:hover { transform: translateY(-3px); }
         .social-icons .fa-instagram:hover { color: #E4405F; }
         .social-icons .fa-facebook:hover { color: #1877F2; }
         .social-icons .fa-linkedin:hover { color: #0A66C2; }
@@ -255,7 +285,11 @@
             }
             .hero-cta-wrapper { order: 3; flex-basis: 100%; }
             .quem-sou-grid { flex-direction: column; text-align: center; }
-            .quem-sou-text { order: 1; }
+            .quem-sou-text { 
+                order: 1; 
+                text-align: justify; /* Mantém justificado no mobile */
+                max-width: 100%; /* Ajuste para não limitar demais em telas menores */
+            }
             .quem-sou-image-wrapper { order: 2; margin-top: 40px; width: 100%; max-width: 400px; }
             .footer-grid { grid-template-columns: 1fr; }
         }
@@ -275,18 +309,20 @@
     <header>
         <div class="navbar">
             <a href="#hero" class="logo">RODRIGO WRASSE</a>
-            <ul class="nav-links"> <li><a href="#hero">HOME</a></li>
+            <ul class="nav-links">
+                <li><a href="#hero">HOME</a></li>
                 <li><a href="#como-funciona">COMO FUNCIONA</a></li>
                 <li><a href="#beneficios">BENEFÍCIOS</a></li>
                 <li><a href="#quem-sou">QUEM SOU</a></li>
                 <li><a href="#fale-comigo">CONTATO</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu"> <i class="fas fa-bars"></i>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="whatsapp-float" target="_blank" aria-label="Fale com Rodrigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20vi%20seu%20site%20e%20quero%20analisar%20um%20imóvel%20da%20Caixa." class="whatsapp-float" target="_blank" aria-label="Fale com Rodrigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
     
     <main>
         <section id="hero">
@@ -294,8 +330,8 @@
                 <div class="hero-grid fade-in">
                     
                     <div class="hero-text">
-                        <h1>Quer comprar um imóvel da Caixa na Venda Direta no Paraná? Fale comigo e vamos analisar juntos a viabilidade!</h1>
-                        <h2>Receba um levantamento completo do imóvel, com orientação 100% gratuita e online — da análise à escritura.</h2>
+                        <h1>Imóveis da Caixa com desconto são ótimas oportunidades — mas exigem cuidado.</h1>
+                        <h2>Antes de comprar, fale comigo! Faço a análise completa do imóvel e te mostro se o investimento realmente vale a pena. Tudo gratuito, online e com total transparência.</h2>
                     </div>
 
                     <div class="hero-image">
@@ -303,7 +339,7 @@
                     </div>
 
                     <div class="hero-cta-wrapper">
-                        <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-cta" target="_blank">
+                        <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20vi%20seu%20site%20e%20quero%20analisar%20um%20imóvel%20da%20Caixa." class="btn-cta" target="_blank">
                             <i class="fab fa-whatsapp"></i>Fale comigo no WhatsApp agora
                         </a>
                     </div>
@@ -316,37 +352,37 @@
             <div class="container">
                 <div class="section-title fade-in"><h2>Como funciona o processo com o Rodrigo Wrasse</h2></div>
                 <div class="timeline">
-                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>1. Ponto de Partida</h3><p>Você quer comprar um imóvel da Caixa, mas não sabe por onde começar.</p></div></div>
-                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>2. Primeiro Contato</h3><p>Conversamos pelo WhatsApp e agendamos uma videochamada individual.</p></div></div>
-                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>3. Orientação Gratuita</h3><p>Faço uma orientação personalizada, tirando todas as suas dúvidas.</p></div></div>
-                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>4. Análise Técnica</h3><p>Analisamos juntos a viabilidade e documentação do imóvel desejado.</p></div></div>
-                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>5. Proposta de Compra</h3><p>Após a análise, você decide pelo imóvel e eu te auxilio com a apresentação da proposta de compra no sistema da Caixa.</p></div></div>
-                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>6. Credenciamento</h3><p>No sistema da Caixa, você me escolhe como seu corretor responsável.</p></div></div>
-                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>7. Financiamento (se necessário)</h3><p>Caso precise de financiamento, eu cuido de todo o processo para você.</p></div></div>
-                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>8. Pagamento à Vista</h3><p>Se o pagamento for à vista, te auxilio com a escritura pública e o registro.</p></div></div>
-                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>9. Questões de Ocupação</h3><p>Se o imóvel estiver ocupado, te ajudo a contatar um advogado local de confiança.</p></div></div>
-                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>10. Entrega das Chaves</h3><p>Você toma posse do seu imóvel com total tranquilidade e segurança.</p></div></div>
+                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>1. Interesse na Venda Direta</h3><p>Você identificou um imóvel da Caixa com potencial de investimento e quer segurança na compra.</p></div></div>
+                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>2. Primeiro Contato e Análise</h3><p>Conversamos pelo WhatsApp, faço uma análise prévia e agendamos uma videochamada.</p></div></div>
+                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>3. Levantamento Completo e Orientação</h3><p>Apresento um levantamento detalhado do imóvel (documentação, ocupação, riscos) e tiro suas dúvidas.</p></div></div>
+                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>4. Validação do Investimento</h3><p>Com todas as informações, você decide se o investimento realmente vale a pena. Sem surpresas.</p></div></div>
+                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>5. Proposta de Compra</h3><p>Decidido a prosseguir, eu te auxilio com a apresentação da proposta de compra no sistema da Caixa, garantindo a conformidade.</p></div></div>
+                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>6. Credenciamento</h3><p>No sistema da Caixa, você me escolhe como seu corretor responsável para representá-lo.</p></div></div>
+                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>7. Financiamento ou Pagamento à Vista</h3><p>Seja financiamento ou à vista, cuido de todo o processo de aprovação de crédito e preparo de documentação.</p></div></div>
+                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>8. Escritura e Registro</h3><p>Te auxilio com a escritura pública e o registro em seu nome, assegurando a posse legal do imóvel.</p></div></div>
+                    <div class="timeline-item left fade-in"><div class="timeline-content"><h3>9. Questões de Ocupação (se aplicável)</h3><p>Se o imóvel estiver ocupado, te conecto com advogados especializados para agilizar o processo de desocupação.</p></div></div>
+                    <div class="timeline-item right fade-in"><div class="timeline-content"><h3>10. Posse do Imóvel</h3><p>Você assume a posse do seu imóvel de investimento com tranquilidade, sabendo que tudo foi feito corretamente.</p></div></div>
                 </div>
             </div>
         </section>
 
         <section id="beneficios">
             <div class="container">
-                <div class="section-title fade-in"><h2>Por que escolher o Rodrigo Wrasse?</h2></div>
+                <div class="section-title fade-in"><h2>Por que investir com a assessoria de Rodrigo Wrasse?</h2></div>
                 <div class="beneficios-grid">
-                    <div class="beneficio-card fade-in"><i class="fas fa-compass"></i><h3>Orientação Gratuita e Personalizada</h3><p>Atendimento direto comigo via videochamada, sem robôs e sem enrolação.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-balance-scale"></i><h3>Transparência Total</h3><p>Sem taxas, sem cursos, sem pegadinhas. Apenas orientação real e honesta.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-file-signature"></i><h3>Acompanhamento até o Registro</h3><p>Do início ao fim da compra, estarei ao seu lado em cada etapa do processo.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-certificate"></i><h3>Corretor Credenciado à Caixa</h3><p>Atuação oficial na modalidade Venda Direta, garantindo total segurança no processo.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-hand-holding-dollar"></i><h3>Viabilidade de Recursos para Financiamento</h3><p>Analisamos sua capacidade de crédito e encontramos as melhores condições para o seu perfil.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-clipboard-check"></i><h3>Análise Completa do Imóvel Antes da Proposta</h3><p>Verificamos a documentação e o estado do imóvel para garantir uma compra segura e sem surpresas.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-user-check"></i><h3>Análise de crédito completa</h3><p>Nossa central faz toda análise de crédito e aprovação do financiamento - 100% gratuito.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-globe-americas"></i><h3>Especialista no Paraná</h3><p>Atendimento focado e especializado para todos os imóveis da Caixa em Venda Direta no estado do Paraná.</p></div>
-                    <div class="beneficio-card fade-in"><i class="fas fa-gift"></i><h3>100% Gratuito</h3><p>Você não desembolsa um real pela assessoria!</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-search-dollar"></i><h3>Análise Detalhada de Investimento</h3><p>Verifico a viabilidade e o real potencial de retorno do imóvel da Caixa antes da sua decisão.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-shield-alt"></i><h3>Segurança e Transparência</h3><p>Elimine riscos e burocracia. Minha assessoria é totalmente gratuita, sem pegadinhas e com clareza total.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-clipboard-check"></i><h3>Processo Descomplicado</h3><p>Cuido de toda a papelada e etapas junto à Caixa, do início ao registro, para sua conveniência.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-handshake"></i><h3>Corretor Credenciado e Experiente</h3><p>Especialista na Venda Direta da Caixa no Paraná, garantindo conformidade e o melhor suporte.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-chart-line"></i><h3>Potencial de Lucro Otimizado</h3><p>Com a análise correta, você garante um investimento com alta chance de valorização.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-headset"></i><h3>Atendimento Personalizado e Direto</h3><p>Fale direto comigo via videochamada. Sem robôs, sem intermediários, focado nas suas dúvidas.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-university"></i><h3>Especialista em Imóveis Caixa no Paraná</h3><p>Conhecimento aprofundado do mercado e processos para imóveis de Venda Direta em todo o estado.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-gift"></i><h3>Assessoria 100% Gratuita</h3><p>Todo o meu acompanhamento e suporte são sem custo para você. A Caixa me remunera.</p></div>
+                    <div class="beneficio-card fade-in"><i class="fas fa-gavel"></i><h3>Suporte Jurídico (Opcional)</h3><p>Se necessário, conecto você a advogados de confiança para questões de desocupação, com custos negociados à parte.</p></div>
                 </div>
                 <div class="cta-section-button fade-in">
-                    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20saber%20mais%20sobre%20a%20assessoria" class="btn-cta" target="_blank">
-                        <i class="fab fa-whatsapp"></i>Quero uma Análise Gratuita
+                    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20vi%20seu%20site%20e%20quero%20analisar%20um%20imóvel%20da%20Caixa%20para%20investimento." class="btn-cta" target="_blank">
+                        <i class="fab fa-whatsapp"></i>Quero Analisar um Investimento
                     </a>
                 </div>
             </div>
@@ -360,9 +396,9 @@
                         <div class="creci-badge">CRECI<br>F-32110</div>
                     </div>
                     <div class="quem-sou-text">
-                        <span class="tag">Corretor Credenciado</span>
+                        <span class="tag">Corretor Credenciado Caixa</span>
                         <h2>Quem é Rodrigo Wrasse</h2>
-                        <p>Corretor de imóveis CRECI F-32110, especialista na intermediação de Venda Direta de imóveis da Caixa Econômica Federal no estado do Paraná.</p>
+                        <p>Corretor de imóveis CRECI F-32110, especialista na intermediação de Venda Direta de imóveis da Caixa Econômica Federal no estado do Paraná. Meu foco é dar segurança e clareza para investidores.</p>
                         <p>Com anos de experiência no mercado imobiliário, ofereço um serviço diferenciado: não cobro por material de apoio ou assessoria — quando você arrematar um imóvel, basta me escolher como seu corretor no sistema da Caixa e pronto. Não desembolse um real pela orientação e acompanhamento. Após o arremate, cuido de toda a documentação e ainda pago a escritura pública.</p>
                         <div class="empresa-box">
                             <div class="empresa-box-header">
@@ -380,20 +416,20 @@
 
         <section id="depoimentos">
             <div class="container">
-                <div class="section-title fade-in"><h2>Quem comprou com o Rodrigo aprova!</h2></div>
+                <div class="section-title fade-in"><h2>Quem investiu com a assessoria do Rodrigo aprova!</h2></div>
                 <div class="depoimentos-grid">
-                    <div class="depoimento-card fade-in"><p>“Rodrigo me ajudou em cada etapa. Fiz a compra pela Caixa e tudo correu com tranquilidade. O atendimento foi nota 10, muito profissional e atencioso.”</p><cite>— Anderson L., Cascavel/PR</cite></div>
-                    <div class="depoimento-card fade-in"><p>“Eu tinha muito receio de comprar imóvel da Caixa por ser ocupado. O Rodrigo desmistificou tudo e me deu a segurança que eu precisava. Recomendo!”</p><cite>— Mariana S., Foz do Iguaçu/PR</cite></div>
-                    <div class="depoimento-card fade-in"><p>“Serviço gratuito e de altíssima qualidade. É raro encontrar profissionais assim. Fui muito bem assessorado do começo ao fim. Consegui meu apartamento.”</p><cite>— Carlos E., Toledo/PR</cite></div>
+                    <div class="depoimento-card fade-in"><p>“Como investidor, a análise do Rodrigo foi fundamental para eu ter segurança na compra. Ele me mostrou os detalhes que eu jamais veria sozinho. Ótimo trabalho!”</p><cite>— Anderson L., Cascavel/PR</cite></div>
+                    <div class="depoimento-card fade-in"><p>“Eu tinha muito receio de comprar imóvel da Caixa por ser ocupado. O Rodrigo desmistificou tudo e me deu a segurança que eu precisava para o investimento. Recomendo!”</p><cite>— Mariana S., Foz do Iguaçu/PR</cite></div>
+                    <div class="depoimento-card fade-in"><p>“Serviço gratuito e de altíssima qualidade. É raro encontrar profissionais assim. Fui muito bem assessorado do começo ao fim e consegui um excelente retorno no meu apartamento.”</p><cite>— Carlos E., Toledo/PR</cite></div>
                 </div>
             </div>
         </section>
 
         <section id="fale-comigo">
             <div class="container fade-in">
-                <h2>Quer começar seu processo agora mesmo?</h2>
+                <h2>Pronto para analisar seu próximo investimento imobiliário?</h2>
                 <p>Envie uma mensagem no WhatsApp e tire todas as suas dúvidas gratuitamente. Atendimento direto comigo, sem robôs e sem custo.</p>
-                <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-cta" target="_blank"><i class="fab fa-whatsapp"></i>Falar com Rodrigo no WhatsApp</a>
+                <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20vi%20seu%20site%20e%20quero%20analisar%20um%20imóvel%20da%20Caixa%20para%20investimento." class="btn-cta" target="_blank"><i class="fab fa-whatsapp"></i>Falar com Rodrigo no WhatsApp</a>
             </div>
         </section>
     </main>
@@ -408,7 +444,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contato</h4>
-                    <p><i class="fab fa-whatsapp"></i><a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" target="_blank">(45) 99845-9643</a></p>
+                    <p><i class="fab fa-whatsapp"></i><a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20vi%20seu%20site%20e%20quero%20analisar%20um%20imóvel%20da%20Caixa%20para%20investimento." target="_blank">(45) 99845-9643</a></p>
                     <p><i class="fas fa-envelope"></i><a href="mailto:rodrigowrasse@gmail.com">rodrigowrasse@gmail.com</a></p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/rodrigowrasse/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
