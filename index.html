@@ -257,13 +257,16 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 15px;
+                position: relative; /* Para posicionar o botão de menu */
             }
             .navbar .nav-links {
                 flex-direction: column;
                 width: 100%;
                 gap: 10px;
-                text-align: left;
-                display: none; /* Escondido por padrão, será ativado com JS para um menu hambúrguer */
+                text-align: center; /* Centraliza os itens do menu mobile */
+                display: none; /* Escondido por padrão */
+                background-color: var(--laranja-caixa); /* Fundo para o menu aberto */
+                padding-bottom: 10px; /* Espaçamento inferior */
             }
             .navbar .nav-links.show {
                 display: flex;
@@ -273,22 +276,51 @@
                 width: 100%;
                 border-bottom: 1px solid rgba(255,255,255,0.2);
             }
-            .navbar .btn-header-cta {
-                width: 100%;
-                justify-content: center;
-                margin-top: 10px;
+            .navbar .nav-links li:last-child a {
+                border-bottom: none; /* Remove borda do último item */
             }
+            .navbar .btn-header-cta {
+                width: auto; /* Deixa o botão se ajustar ao conteúdo */
+                padding: 10px 15px; /* Ajusta o padding */
+                font-size: 0.8rem; /* Diminui a fonte */
+                margin-left: auto; /* Empurra o botão para a direita na linha */
+            }
+            .navbar .btn-header-cta span { /* Novo span para o texto */
+                display: inline; /* Visível no desktop */
+            }
+
             .menu-toggle {
                 display: block; /* Botão de menu hamburguer visível no mobile */
                 font-size: 1.8rem;
                 cursor: pointer;
                 color: var(--branco);
+                position: absolute; /* Posiciona o hambúrguer */
+                right: 20px;
+                top: 15px;
             }
-            .navbar-top {
+            .navbar-top-area { /* Nova área para logo e menu/cta no mobile */
                 display: flex;
                 justify-content: space-between;
-                width: 100%;
                 align-items: center;
+                width: 100%;
+            }
+            .navbar-logo-mobile { /* Para ajustar o logo no mobile */
+                flex-grow: 1; /* Ocupa espaço para empurrar os outros elementos */
+            }
+            .navbar-right-mobile { /* Agrupa o hambúrguer e CTA no mobile */
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            /* Esconde o texto do botão CTA do header no mobile */
+            .btn-header-cta .text-label {
+                display: none;
+            }
+
+            /* Garante que o menu toggle esteja visível no mobile */
+            .menu-toggle {
+                display: block;
             }
         }
         @media (max-width: 768px) {
@@ -301,9 +333,11 @@
             .timeline-item.right::after { left: 15px; }
         }
 
-        /* Esconder menu toggle em desktop */
-        .menu-toggle {
-            display: none;
+        /* Esconder menu toggle em desktop (garantia) */
+        @media (min-width: 993px) {
+            .menu-toggle {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -311,10 +345,14 @@
 
     <header>
         <div class="navbar">
-            <div class="navbar-top">
-                <a href="#hero" class="logo">RODRIGO WRASSE</a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
+            <div class="navbar-top-area"> <a href="#hero" class="logo navbar-logo-mobile">RODRIGO WRASSE</a>
+                <div class="navbar-right-mobile">
+                    <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-header-cta" target="_blank">
+                        <i class="fab fa-whatsapp"></i><span class="text-label">FALE AGORA</span>
+                    </a>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </div>
             <ul class="nav-links">
@@ -324,9 +362,6 @@
                 <li><a href="#quem-sou">QUEM SOU</a></li>
                 <li><a href="#fale-comigo">CONTATO</a></li>
             </ul>
-            <a href="https://wa.me/554598459643?text=Olá%20Rodrigo,%20quero%20entender%20como%20funciona%20a%20compra%20pela%20Caixa" class="btn-header-cta" target="_blank">
-                <i class="fab fa-whatsapp"></i>FALE AGORA
-            </a>
         </div>
     </header>
 
@@ -528,15 +563,17 @@
             }
 
             // Destacar o link ativo no menu (opcional, pode ser expandido para IntersectionObserver)
-            // Aqui é uma versão bem simplificada, apenas para demonstração
             const sections = document.querySelectorAll('section');
             const navLinksList = document.querySelectorAll('.nav-links a');
+            const headerHeight = document.querySelector('header').offsetHeight;
 
             window.addEventListener('scroll', () => {
                 let current = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight - 30; // Ajuste o offset
-                    if (pageYOffset >= sectionTop) {
+                    const sectionTop = section.offsetTop - headerHeight - 50; // Ajuste o offset para cima
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionBottom) {
                         current = '#' + section.getAttribute('id');
                     }
                 });
