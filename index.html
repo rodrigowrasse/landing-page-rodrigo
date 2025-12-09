@@ -41,6 +41,7 @@
             --laranja-caixa: #F26122; /* Cor laranja da Caixa */
             --amarelo-alerta: #ffc107; /* Cor para alertas */
             --amarelo-fundo: #fff3cd; /* Fundo claro para alertas */
+            --vermelho-erro: #dc3545;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -228,24 +229,57 @@
             margin-top: 15px;
         }
 
+        /* ============== NOVO: SEÇÃO COMPARATIVO (Gurus vs Rodrigo) ============== */
+        #comparativo { background-color: var(--azul-claro); }
+        .comparison-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .comparison-column {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background-color: var(--branco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .comparison-column.gurus { border-top: 5px solid var(--vermelho-erro); }
+        .comparison-column.rodrigo { border-top: 5px solid var(--verde-whatsapp); transform: scale(1.02); z-index: 2; } /* Destaque para Rodrigo */
+        
+        .comparison-header { padding: 25px; text-align: center; color: var(--branco); }
+        .gurus .comparison-header { background-color: #e74c3c; }
+        .rodrigo .comparison-header { background-color: var(--verde-whatsapp); }
+        .comparison-header h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .comparison-header p { font-size: 0.9rem; opacity: 0.9; }
+
+        .comparison-list { list-style: none; padding: 25px; }
+        .comparison-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; font-size: 1rem; line-height: 1.5; }
+        .comparison-list li i { flex-shrink: 0; margin-top: 4px; }
+        .gurus .comparison-list li i { color: var(--vermelho-erro); }
+        .rodrigo .comparison-list li i { color: var(--verde-whatsapp); }
+        .comparison-list strong { font-weight: 700; color: var(--azul-marinho); }
 
         /* ============== 2. SEÇÃO COMO FUNCIONA (LINHA DO TEMPO) ============== */
-        #como-funciona { background-color: var(--azul-claro); }
+        #como-funciona { background-color: var(--branco); }
         .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 3px; background-color: var(--branco); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
+        .timeline::after { content: ''; position: absolute; width: 3px; background-color: var(--azul-claro); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
         .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
         .timeline-item.left { left: 0; }
         .timeline-item.right { left: 50%; }
-        .timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -14px; background-color: var(--azul-claro); border: 4px solid var(--azul-marinho); top: 25px; border-radius: 50%; z-index: 1; }
+        .timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -14px; background-color: var(--branco); border: 4px solid var(--azul-marinho); top: 25px; border-radius: 50%; z-index: 1; }
         .timeline-item.right::after { left: -12px; }
-        .timeline-content { padding: 20px 30px; background-color: var(--branco); position: relative; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .timeline-content { padding: 20px 30px; background-color: var(--azul-claro); position: relative; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .timeline-content h3 { font-size: 1.1rem; color: var(--azul-marinho); margin-bottom: 5px; }
         .timeline-content strong.crucial { color: var(--laranja-caixa); font-weight: 800; } /* Destaque extra para o passo crucial */
 
         /* ============== 3. SEÇÃO BENEFÍCIOS ============== */
-        #beneficios { background-color: var(--branco); }
+        #beneficios { background-color: var(--azul-claro); }
         .beneficios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-        .beneficio-card { background-color: var(--cinza-claro); padding: 40px 20px; border-radius: 10px; transition: transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+        .beneficio-card { background-color: var(--branco); padding: 40px 20px; border-radius: 10px; transition: transform 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
         .beneficio-card:hover { transform: translateY(-10px); }
         .beneficio-card i { font-size: 3rem; color: var(--azul-marinho); margin-bottom: 20px; }
         .beneficio-card h3 { font-size: 1.3rem; color: var(--azul-marinho); margin-bottom: 10px; }
@@ -370,6 +404,9 @@
             
             .modalidades-grid { grid-template-columns: 1fr; } /* Modalidades em coluna no mobile */
             
+            .comparison-container { flex-direction: column; align-items: center; }
+            .comparison-column.rodrigo { transform: scale(1); margin-top: 20px; }
+
             .quem-sou-grid { flex-direction: column; text-align: center; }
             .quem-sou-text { 
                 order: 1; 
@@ -473,6 +510,43 @@
 
                 <div style="text-align: center; margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
                     <p><em>Atenção: Antes de realizar qualquer proposta, leia atentamente o edital do imóvel para conferir as regras e condições específicas.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparativo">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Não pague por cursos teóricos antes de ler isso</h2>
+                    <p style="max-width: 800px; margin: 0 auto;">O mercado está cheio de "gurus" vendendo informações que deveriam ser acessíveis. Veja a diferença entre comprar um curso e ter uma assessoria de execução gratuita.</p>
+                </div>
+
+                <div class="comparison-container fade-in">
+                    <div class="comparison-column gurus">
+                        <div class="comparison-header">
+                            <h3>Cursos e Mentorias "Gurus"</h3>
+                            <p>O modelo tradicional de venda de informação.</p>
+                        </div>
+                        <ul class="comparison-list">
+                            <li><i class="fas fa-times-circle"></i> <span><strong>O que você paga?</strong> Cursos caros, e-books ou mentorias pagas adiantado.</span></li>
+                            <li><i class="fas fa-times-circle"></i> <span><strong>O que entregam?</strong> Teoria, vídeo-aulas gravadas e informação genérica. Você faz sozinho.</span></li>
+                            <li><i class="fas fa-times-circle"></i> <span><strong>O Atendimento:</strong> Grupos de alunos lotados ou suporte por e-mail lento.</span></li>
+                            <li><i class="fas fa-times-circle"></i> <span><strong>O Foco Deles:</strong> Vender o curso para você.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-column rodrigo">
+                        <div class="comparison-header">
+                            <h3>Assessoria Rodrigo Wrasse</h3>
+                            <p>O modelo focado na sua execução e resultado.</p>
+                        </div>
+                        <ul class="comparison-list">
+                            <li><i class="fas fa-check-circle"></i> <span><strong>O que você paga?</strong> R$ 0,00. Minha comissão é paga pela Caixa Econômica.</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span><strong>O que eu entrego?</strong> Execução prática. Eu analiso, oriento e faço a burocracia *com* você.</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span><strong>O Atendimento:</strong> Vídeo-chamada individual e WhatsApp direto comigo.</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span><strong>O Meu Foco:</strong> Fazer você arrematar o imóvel com segurança.</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
