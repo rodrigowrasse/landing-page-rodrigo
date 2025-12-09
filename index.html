@@ -39,6 +39,8 @@
             --texto-claro: #edf2f7;
             --font-principal: 'Poppins', sans-serif;
             --laranja-caixa: #F26122; /* Cor laranja da Caixa */
+            --amarelo-alerta: #ffc107; /* Cor para alertas */
+            --amarelo-fundo: #fff3cd; /* Fundo claro para alertas */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -163,7 +165,7 @@
         .btn-cta:hover { background-color: var(--verde-whatsapp-hover); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
         .btn-cta i { font-size: 1.5rem; }
         
-        /* ============== NOVO: SEÇÃO MODALIDADES DE VENDA ============== */
+        /* ============== SEÇÃO MODALIDADES DE VENDA ============== */
         #modalidades { background-color: var(--branco); }
         .modalidades-grid {
             display: grid;
@@ -198,6 +200,34 @@
             display: block;
             margin-top: 15px;
         }
+        /* Estilo para a nova caixa de alerta sobre taxas */
+        .modalidades-alert {
+            background-color: var(--amarelo-fundo);
+            border-left: 5px solid var(--amarelo-alerta);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .modalidades-alert h3 {
+            color: #856404; /* Tom mais escuro de amarelo para contraste */
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .modalidades-alert p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .modalidades-alert .alert-highlight {
+            font-weight: 700;
+            color: var(--azul-marinho);
+            margin-top: 15px;
+        }
+
 
         /* ============== 2. SEÇÃO COMO FUNCIONA (LINHA DO TEMPO) ============== */
         #como-funciona { background-color: var(--azul-claro); }
@@ -435,6 +465,12 @@
                     </div>
                 </div>
                 
+                <div class="modalidades-alert fade-in">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Diferença Importante sobre Taxas</h3>
+                    <p>Nos <strong>Leilões (1º e 2º)</strong>, o comprador paga a comissão de 5% ao leiloeiro. Na <strong>Venda Direta</strong>, NÃO há essa taxa de leiloeiro.</p>
+                    <p class="alert-highlight">Em qualquer uma das modalidades, a <strong>minha assessoria de corretor continua sendo 100% gratuita para você</strong> (paga pela Caixa).</p>
+                </div>
+
                 <div style="text-align: center; margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
                     <p><em>Atenção: Antes de realizar qualquer proposta, leia atentamente o edital do imóvel para conferir as regras e condições específicas.</em></p>
                 </div>
